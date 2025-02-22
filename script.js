@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let films = [];
 
-    // Fetch data from the Flask backend
-    fetch('/api/films')
+    // Load JSON data
+    fetch('films.json')
         .then(response => response.json())
         .then(data => {
             films = data;
@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
         data.forEach(film => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${film[0]}</td>
-                <td>${film[1]}</td>
-                <td>${film[2]}</td>
-                <td>${film[3]}</td>
+                <td>${film.title}</td>
+                <td>${film.release_year}</td>
+                <td>${film.director}</td>
+                <td>${film.box_office}</td>
             `;
             tableBody.appendChild(row);
         });
@@ -32,14 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase();
         const filteredFilms = films.filter(film =>
-            film[0].toLowerCase().includes(query) || film[2].toLowerCase().includes(query)
+            film.title.toLowerCase().includes(query) || film.director.toLowerCase().includes(query)
         );
         renderTable(filteredFilms);
     });
 
     // Sort films by release year
     sortYearButton.addEventListener('click', () => {
-        const sortedFilms = [...films].sort((a, b) => a[1] - b[1]);
+        const sortedFilms = [...films].sort((a, b) => a.release_year - b.release_year);
         renderTable(sortedFilms);
     });
 });
