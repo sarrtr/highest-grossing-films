@@ -10,22 +10,15 @@
     <div class="container">
         <h1>Film Database</h1>
         <div class="controls">
+            <select id="sort">
+                <option value="title">Sort by Title</option>
+                <option value="year">Sort by Release Year</option>
+                <option value="director">Sort by Director</option>
+                <option value="box_office">Sort by Box Office</option>
+            </select>
             <input type="text" id="search" placeholder="Search by title or director...">
-            <button id="sort-year">Sort by Release Year</button>
         </div>
-        <table id="films-table">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Release Year</th>
-                    <th>Director</th>
-                    <th>Box Office</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Rows will be populated dynamically by JavaScript -->
-            </tbody>
-        </table>
+        <div id="films-container"></div>
     </div>
     <script src="script.js"></script>
 </body>
