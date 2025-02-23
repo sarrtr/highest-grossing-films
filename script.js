@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 'box_office':
                     return parseBoxOffice(b.box_office) - parseBoxOffice(a.box_office);
                 case 'country':
-                     return a.director.localeCompare(b.director);
+                     return parseCountry(b.country) - parseCountry(a.country);
                 default:
                     return 0;
             }
