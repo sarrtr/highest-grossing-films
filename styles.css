@@ -3,20 +3,19 @@ body {
     font-size: 17px;
     margin: 0;
     padding: 20px;
-    background: #f6f7ea;
+    background: #e1eeff;
     min-height: 100vh;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 16;
+    padding: 16px; /* Fixed padding */
 }
 
 h1 {
     text-align: center;
     color: black;
-/*     text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
     font-size: 90px;
 }
 
@@ -27,7 +26,6 @@ h1 {
     background: rgba(255,255,255,0.9);
     padding: 15px;
     border-radius: 8px;
-/*     box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
 }
 
 #search {
@@ -53,7 +51,7 @@ h1 {
     background: white;
     border-radius: 10px;
     padding: 20px;
-/*     box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+    margin-bottom: 20px; /* Added margin to split film blocks */
 }
 
 .serial {

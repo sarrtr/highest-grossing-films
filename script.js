@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             filmCard.className = 'film-card';
             filmCard.innerHTML = `
                 <div class="serial">${index + 1}</div>
-                <img src="covers/cover${index + 1}.jpg" alt="${film.title} Cover" class="cover">
+                <img src="covers/cover${film.id}.jpg" alt="${film.title} Cover" class="cover">
                 <div class="details">
                     <h2>${film.title}</h2>
                     <div class="info">
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 'box_office':
                     return parseBoxOffice(b.box_office) - parseBoxOffice(a.box_office);
                 case 'country':
-                     return parseCountry(b.country) - parseCountry(a.country);
+                    return a.country.localeCompare(b.country);
                 default:
                     return 0;
             }
