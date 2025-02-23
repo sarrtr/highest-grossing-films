@@ -59,6 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     return a.director.localeCompare(b.director);
                 case 'box_office':
                     return parseBoxOffice(b.box_office) - parseBoxOffice(a.box_office);
+                case 'country':
+                     return a.director.localeCompare(b.director);
                 default:
                     return 0;
             }
